@@ -35,6 +35,7 @@ npx skills add inprealpha/agent-skills --skill simplify-code
 | [maintain-verification-skill](skills/maintain-verification-skill/SKILL.md) | Audit a project verification skill against current source and observed application behavior. |
 | [orchestrate-work](skills/orchestrate-work/SKILL.md) | Coordinate delegated engineering work from a request through implementation, integration, and review. Use when managing several related tasks or workers, especially when they share decisions or code. Handle small changes directly when delegation adds no useful independence. |
 | [reflect](skills/reflect/SKILL.md) | Extract durable lessons from a work session and route them to focused skill or tooling improvements. |
+| [review-loop](skills/review-loop/SKILL.md) | Iterate on a deliverable through fresh-context subagent reviews and fixes until no material findings remain. Use when the user wants repeated independent review, with autonomous progress or user checkpoints tailored to their preference. |
 | [simplify-code](skills/simplify-code/SKILL.md) | Simplify code when asked to review over-engineering or apply cleanup, including redundant tests and avoidable dependencies. Preserve behavior; keep unrelated feature work and general correctness reviews outside this skill's scope. |
 | [skill-evaluation](skills/skill-evaluation/SKILL.md) | Compare skill variants on realistic tasks with controlled inputs and evidence-based scoring. |
 | [why](skills/why/SKILL.md) | Investigate the history and rationale behind code, with cited facts and explicit uncertainty. |
@@ -46,7 +47,7 @@ Skill instructions and required supporting files are in `skills/`. Harness suppo
 Adapted upstream material retains its MIT license notices within each skill directory:
 
 - `architect`, `blast-radius`, `create-verification-skill`, `hillclimb`, `how`, `interrogate`, `maintain-verification-skill`, `reflect`, `skill-evaluation`, and `why`: [pstack by Lauren Tan](https://github.com/cursor/plugins/tree/f5bdd6826fd0a0d9cbc4347134c3a74a200b9d9d/pstack), revision `f5bdd6826fd0a0d9cbc4347134c3a74a200b9d9d`.
-- `orchestrate-work`: selected [Matt Pocock skills](https://github.com/mattpocock/skills/tree/3cca18b368ae95cdbdebbff572ccafa662551015/skills), revision `3cca18b368ae95cdbdebbff572ccafa662551015`.
+- `orchestrate-work` and `review-loop`: selected procedures and writing guidance from [Matt Pocock skills](https://github.com/mattpocock/skills/tree/3cca18b368ae95cdbdebbff572ccafa662551015/skills), revision `3cca18b368ae95cdbdebbff572ccafa662551015`.
 - `simplify-code`: [Ponytail by DietrichGebert](https://github.com/dietrichgebert/ponytail/tree/356918eba965ee1eac64bd3a7f0dd02108350de5), revision `356918eba965ee1eac64bd3a7f0dd02108350de5`.
 
 No additional repository-wide license is specified for original contributions.
