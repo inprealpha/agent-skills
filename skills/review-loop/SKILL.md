@@ -16,6 +16,10 @@ For software, consider both technical quality and product behavior or UX; let th
 user's priorities determine the emphasis. Offer a sensible default instead of an
 open-ended interview. If the answers are already clear, start working.
 
+A useful question: “What mistakes do you expect me to make—the ones you'd look for
+if you were reviewing this yourself?” Use those anticipated failure modes to guide
+both the work and the reviewers' focus.
+
 After that, proceed autonomously. If the user says **no questions**, infer reasonable
 defaults and begin. If they want to **stay involved**, bring them consequential
 choices and return to them when the loop hits a snag or starts repeating itself.
