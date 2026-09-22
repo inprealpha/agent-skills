@@ -1,12 +1,12 @@
 # Engineering procedures
 
-Use the parts that fit the assignment. These procedures do not independently ask the user, publish documents, or manage other workers.
+Use this reference for concurrent code editing, substantial cross-module integration, or repository-required isolation and review capture. A small prototype with one implementation owner can use direct handoffs and focused checks unless repository instructions require more. These procedures do not independently ask the user, publish documents, or manage other workers.
 
 ## Isolate and integrate code changes
 
-Inspect repository instructions and current Git state before assigning edits. Give each implementation worker a separate branch and worktree from an explicit base commit. Keep the shared work record outside worker worktrees and use one writer for the integration branch.
+Inspect repository instructions and current Git state before assigning edits. For concurrent implementation workers, or whenever repository instructions require isolation, give each worker a separate branch and worktree from an explicit base commit. Keep any shared work record outside worker worktrees and use one writer for integration.
 
-Accept results when changes are committed, the actual diff fits the assignment, and the worker reports its assignment and decision revisions, changed files, checks, and remaining issues. Preserve uncommitted work until its disposition is known. Integrate sequentially and check cross-task behavior even when Git merges cleanly. A broad caller migration may need a compatible interface first, caller updates next, then removal of the old interface.
+When integrating worker branches, accept results when changes are committed, the actual diff fits the assignment, and the worker reports its assignment and decision revisions, changed files, checks, and remaining issues. Preserve uncommitted work until its disposition is known. Integrate sequentially and check cross-task behavior even when Git merges cleanly. A broad caller migration may need a compatible interface first, caller updates next, then removal of the old interface.
 
 Give reviewers an immutable candidate commit and explicit comparison base. Commit local candidate changes before a commit-based review; otherwise provide a complete immutable patch including staged, unstaged, and new files. Remove temporary worktrees only after their work is integrated or accounted for.
 

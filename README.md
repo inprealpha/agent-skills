@@ -28,12 +28,13 @@ npx skills add inprealpha/agent-skills --skill simplify-code
 | --- | --- |
 | [architect](skills/architect/SKILL.md) | Design caller usage, interfaces, data types, and module ownership before implementing a change. |
 | [blast-radius](skills/blast-radius/SKILL.md) | Assess what a change could break beyond its diff and test the assumptions its safety depends on. |
+| [craft](skills/craft/SKILL.md) | Improve writing, design, products, or creative work that feels generic, low-effort, hard to parse, or like “AI slop,” grounding choices in the audience's needs. Not an AI detector or a general code-cleanup workflow. |
 | [create-verification-skill](skills/create-verification-skill/SKILL.md) | Create executable project verification instructions with a feature map and retained evidence. |
 | [hillclimb](skills/hillclimb/SKILL.md) | Improve one measurable outcome through isolated hypotheses, repeated measurements, and regression checks. |
 | [how](skills/how/SKILL.md) | Explain a subsystem through traced runtime flow, data ownership, and concrete code references. |
 | [interrogate](skills/interrogate/SKILL.md) | Adversarially review a change and deliver a prioritized verdict grounded in reachable failures. |
 | [maintain-verification-skill](skills/maintain-verification-skill/SKILL.md) | Audit a project verification skill against current source and observed application behavior. |
-| [orchestrate-work](skills/orchestrate-work/SKILL.md) | Use when a large task breaks cleanly into smaller, largely independent subtasks; work naturally divides into multiple parallel workstreams; substantial background research can advance the task while other work proceeds; or independent subagents would substantially improve review. Coordinate assignments, shared decisions, and combined results across engineering and knowledge work. |
+| [orchestrate-work](skills/orchestrate-work/SKILL.md) | Coordinate substantial work across research, design, implementation, and independent review. Use when work naturally divides into distinct workstreams, substantial background research can inform execution, or the user requests a deliberate team workflow, especially when product or creative decisions need exploration before building. |
 | [reflect](skills/reflect/SKILL.md) | Extract durable lessons from a work session and route them to focused skill or tooling improvements. |
 | [review-loop](skills/review-loop/SKILL.md) | Finish work through repeated fresh-context reviews and fixes. Use when the user wants an autonomous review loop after a brief alignment on the outcome and review perspectives. |
 | [simplify-code](skills/simplify-code/SKILL.md) | Simplify code when asked to review over-engineering or apply cleanup, including redundant tests and avoidable dependencies. Preserve behavior; keep unrelated feature work and general correctness reviews outside this skill's scope. |
@@ -50,4 +51,4 @@ Adapted upstream material retains its MIT license notices within each skill dire
 - `orchestrate-work` and `review-loop`: selected procedures and writing guidance from [Matt Pocock skills](https://github.com/mattpocock/skills/tree/3cca18b368ae95cdbdebbff572ccafa662551015/skills), revision `3cca18b368ae95cdbdebbff572ccafa662551015`.
 - `simplify-code`: [Ponytail by DietrichGebert](https://github.com/dietrichgebert/ponytail/tree/356918eba965ee1eac64bd3a7f0dd02108350de5), revision `356918eba965ee1eac64bd3a7f0dd02108350de5`.
 
-No additional repository-wide license is specified for original contributions.
+`craft` is original work and includes a notice preserving the existing policy: no additional license is granted. No additional repository-wide license is specified for original contributions.

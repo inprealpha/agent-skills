@@ -30,17 +30,27 @@ scope. Follow any effort limits the user sets.
 ## Work, review, repeat
 
 Do the work, then spawn a reviewer with a fresh context. Give it the user's intended
-outcome, the relevant artifacts, and the review perspective—not the full conversation
-or your argument for why the work is good. Use multiple reviewers in parallel when
-the complexity warrants distinct perspectives; one reviewer can cover several sides
-of a smaller task.
+outcome, constraints, relevant artifacts, and review perspective—not the full
+conversation, other reviewers' verdicts, or your argument for why the work is good.
+Use multiple reviewers in parallel when distinct perspectives warrant it; one can
+cover several sides of a smaller task. Keep review coordination with the main agent;
+reviewers should not recursively recruit more reviewers.
+
+Match review evidence to the concern: visual reviewers inspect the rendered artifact,
+usability reviewers exercise the relevant flows, and engineering reviewers examine
+implementation and meaningful checks. Ask for concrete findings with evidence, user
+impact, and what they could not inspect. Missing access or verification is a coverage
+gap, not a clean approval. If fresh-context delegation is unavailable, report that
+limitation; self-review does not establish independent convergence.
 
 Evaluate the feedback, make worthwhile fixes, and send the updated work to newly
-spawned reviewers. Adjust their prompts as the work evolves while keeping the user's
-outcome fixed. Reviews should examine the result as a whole, not just confirm that
-previous comments were addressed.
+spawned reviewers. Resolve disagreement against the user's outcome and observable
+evidence, not a vote; do not make changes merely to satisfy a reviewer. Adjust prompts
+as the work evolves while keeping the user's outcome fixed. Reviews should examine
+the current result as a whole, not just confirm that previous comments were addressed.
 
-Finish when a fresh review of the current result has no unresolved major findings
-and the work meets the agreed outcome. Optional polish need not keep the loop alive.
+Finish when a fresh review of the current result has no unresolved material findings or
+material coverage gaps and the work meets the agreed outcome. Optional polish need
+not keep the loop alive.
 If reviews stop producing progress, change the approach or report the blocker;
 stalling or reaching an effort limit is not convergence.

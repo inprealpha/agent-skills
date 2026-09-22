@@ -1,8 +1,16 @@
 # Coordination
 
+Use this protocol for overlapping edits or dependencies, shared resources, changing contracts, longer-running or resumed work, and repository-required coordination. For a short team task with stable decisions and separate outputs, bounded assignments and direct handoffs can suffice.
+
 Use a small active work record with one coordinator writer. Its location must be shared by participating workers, rather than copied into each worker’s workspace. The record describes ownership; it does not enforce locks against independent sessions.
 
 Keep current assignments, answers, and status together, and keep prior events in a separate history section. Update the current entries when they change so a resumed reader does not have to infer which of several conflicting states applies.
+
+## Establish the shared work
+
+Identify other active workflows before assigning edits. Join an existing coordinator through an explicit handoff when possible. If another session's ownership cannot be established, investigate without writing to its possible scope until ownership is resolved. This procedure supports one coordinator and participating workers; it does not implement exclusive ownership or abandoned-work recovery across independent coordinators.
+
+The work record identifies the coordinator and project, requested outcome, assignments, accepted decisions, open questions, and integration state. Keep it as small as the actual dependencies allow.
 
 ## Assignments
 
@@ -24,6 +32,8 @@ Send workers this instruction with their task:
 > Work within the assigned edits and accepted decisions. Look up facts before raising a question. Send unresolved choices, proposed shared document changes, and requests for additional edit scope to the coordinator. Report evidence and the work affected. Continue useful work that does not depend on the answer. Return your assignment revision, relevant decision revisions, result locations and versions, changed artifacts, checks actually run, and unresolved concerns. Do not ask the user independently, change shared decision records, integrate other workers’ outputs, or expand the assignment yourself.
 
 ## Questions and decisions
+
+Resolve enough uncertainty for the next assignment to complete and verify its result; do not require an exhaustive interview. Ask consequential questions before dependent work, explaining the concrete choice, recommendation, consequence, and affected work. Group related questions when they are easy to answer together. Avoid reopening accepted choices without new evidence or changed scope.
 
 For an open question, record the choice being made, its scope, known facts, options, recommendation, and affected tasks. Match existing questions by meaning and scope before creating another. Similar words can describe different decisions; do not combine them if the governing requirements differ.
 
@@ -54,3 +64,9 @@ On resume, read the work record, current artifacts and workspace state, accepted
 A new coordinator needs an explicit handoff from the previous owner, or evidence that it has stopped and a reconciliation of outstanding work. Do not infer exclusive ownership from an old timestamp alone.
 
 Before accepting a resumed worker's result, compare its assignment revision and decision assumptions with the current ones. Revalidate affected behavior against the integration candidate. Keep unrelated completed work rather than restarting the whole workflow.
+
+## Accept results
+
+A result is ready for integration when its artifacts and verification evidence are available, its actual changes fit the assignment, and it reports the assignment revision, relevant decision revisions, result versions, checks, and remaining issues. Compare these with current accepted decisions before applying the result. If stale, reconcile the assumptions and revalidate affected behavior against the integration candidate.
+
+Preserve completed or unfinished work until integrated or explicitly accounted for. Remove temporary copies only after that disposition is known.
