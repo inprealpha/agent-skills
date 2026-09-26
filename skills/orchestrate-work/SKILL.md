@@ -1,40 +1,42 @@
 ---
 name: orchestrate-work
-description: Coordinate substantial work across research, design, implementation, and independent review. Use when work naturally divides into distinct workstreams, substantial background research can inform execution, or the user requests a deliberate team workflow, especially when product or creative decisions need exploration before building.
+description: Coordinate substantial work through decomposition, parallel execution, and fresh perspectives. Use for separable workstreams, research/design informing implementation, or requested team workflows.
 ---
 
 # Orchestrate work
 
-Own the integrated outcome. Separate responsibilities where it improves judgment; do not equate more agents, more ceremony, or elapsed time with better work. Workers complete bounded assignments rather than recursively running this orchestration workflow.
+Own the integrated outcome. Delegate to improve speed or judgment, not to maximize team size. Workers complete bounded assignments rather than recursively orchestrating.
 
 ## Understand before dividing
 
-Read the request, existing artifacts, accepted decisions, and applicable instructions. Identify who will use the result, what they need to accomplish, and the evidence that would establish success. Distinguish explicit requirements from assumptions worth investigating. Reuse known answers; research accessible facts before asking the user.
+Read the request, artifacts, decisions, and applicable instructions. Establish intended use and success criteria; separate requirements from assumptions.
 
-Choose workstreams around different uncertainties or independently verifiable outcomes. Run independent research in parallel early enough to inform decisions. Sequence dependent work. Keep small tasks local; when delegation is unavailable, perform the same reasoning sequentially and state that limitation.
+Split by uncertainty or verifiable outcome. Parallelize independent work; sequence dependencies. Keep small tasks local. Without delegation, proceed sequentially and disclose the limitation.
 
-For product, visual, or creative work, read [Design and use](references/design-and-use.md). Move through understanding, alternatives, inspection, implementation, and actual use; revisit earlier choices when evidence warrants it. Do not let a functioning implementation stand in for a considered design. Existing approved designs and narrow repairs need only the stages their uncertainty warrants.
+For product or creative work, read [Design and use](references/design-and-use.md): explore, inspect, implement, and test actual use.
 
 ## Establish ownership
 
-Use one coordinator for shared decisions and integration. A small team can use direct assignments and handoffs, with one implementation owner. Read [Coordination](references/coordination.md) when edits or dependencies overlap, shared resources or contracts change, work becomes long-running or resumes, or repository rules require its record and recovery protocol. Another session's private note does not grant exclusive ownership.
+Use one coordinator for decisions and integration; name shared-artifact owners. Assign workers outcomes, versioned inputs, acceptance criteria, edit boundaries, dependencies, decisions, and return destinations. Require scope/contract changes to be raised before acting.
 
-Follow repository isolation requirements. Read [Engineering procedures](references/engineering.md) for concurrent code editing, substantial cross-module integration, or repository-required worktrees and review capture. Read [Codex execution](references/codex.md) when delegation setup or tool mapping is needed. Keep harness-specific tools and settings out of shared instructions.
+Load procedures as needed:
 
-Give each worker the outcome, relevant source material, identified input version, acceptance criteria, edit boundaries, dependencies, accepted decisions, and return destination. Keep context focused. Give shared artifacts and interfaces a named owner. Reviewers and independent investigators get the request and evidence without the coordinator's preferred conclusion. Workers report proposed scope or contract changes before acting outside their assignment.
+- [Coordination](references/coordination.md): overlapping edits/dependencies, shared resources, changing contracts, long-running/resumed work, or required records.
+- [Engineering](references/engineering.md): concurrent code edits, substantial cross-module integration, or required worktrees/review capture. Follow repository isolation rules.
+- [Codex execution](references/codex.md): delegation setup and tool mapping.
 
 ## Decide and coordinate
 
-Resolve routine, reversible details using the request and project conventions. Ask only when a missing choice materially affects the outcome, scope, cost, authorization, or an expensive commitment. Combine duplicate questions and propagate one answer to every affected worker. Prepare a concrete candidate before requesting subjective approval; do not repeatedly ask for permission already given.
+Investigate facts and resolve routine details locally. Combine consequential questions, reuse answers and authorization, and present concrete candidates for subjective approval. Continue independent work while awaiting answers; silence is not approval.
 
-Read worker messages while work proceeds. When a decision or interface changes, pause dependent edits, update affected assignments, and require acknowledgment. Continue independent work while a required answer is pending. Silence is not an answer. Preserve unfinished work until its disposition is known.
+Read worker messages. Pause dependent edits when decisions or interfaces change; update assignments and require acknowledgment. Preserve unfinished work.
 
 ## Integrate, use, and revise
 
-Check each result against its scope and current accepted decisions, including revisions when tracked. Reconcile stale assumptions before applying it; passing checks under a superseded answer are insufficient. Integrate one result at a time with one writer, then check cross-task behavior. A prerequisite becomes available after integration and relevant checks, not merely when its worker reports completion.
+Reconcile results with current scope and decisions. Integrate sequentially with one writer; verify cross-task behavior before releasing prerequisites.
 
-Spawn new reviewers with fresh contexts for independent review; an investigator carrying earlier conclusions is not a fresh reviewer. Give them a stable candidate, the request, accepted decisions, and explicit review axes. Verify which version they inspected. Have them read, view, or use the deliverable as its intended audience would; ask for concrete evidence and consequences. Simulated personas are test lenses, not evidence of real user research. Reviewers report findings without editing the candidate.
+Give investigators and reviewers evidence without a preferred conclusion. Spawn new fresh-context reviewers; do not reuse investigators. Supply a stable candidate, request, decisions, and review axes; verify the inspected version. Reviewers use the deliverable as its audience would, reporting evidence without editing. Simulated personas are not real user research.
 
-Consolidate duplicate causes, resolve conflicting suggestions against the user's needs, and assign bounded fixes. Reviewer agreement is not proof. Recheck affected behavior and send material revisions through fresh review; an available iterative-review skill may help but is not required.
+Consolidate causes; judge feedback against user needs, not agreement. Assign fixes, recheck affected behavior, and freshly review material revisions. Surface unresolved tradeoffs when review stops improving the result.
 
-Finish when the integrated result satisfies the acceptance criteria, required checks pass, and material findings are resolved. Remaining limitations must be nonmaterial or outside the accepted scope; an unmet acceptance criterion means the work is incomplete. Report the result, actual verification, and limitations. When reviews cease producing material improvement, surface unresolved tradeoffs rather than manufacturing consensus. Leave a resumable record if blocked.
+Finish when acceptance criteria and required checks pass and material findings are resolved. Report verification and limitations; leave a resumable record if blocked.

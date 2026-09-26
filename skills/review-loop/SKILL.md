@@ -12,9 +12,8 @@ to manage each review round.
 
 Ask a few quick questions up front only where the request leaves meaningful choices:
 what does a good result look like, and which perspectives should the reviews cover?
-For software, consider both technical quality and product behavior or UX; let the
-user's priorities determine the emphasis. Offer a sensible default instead of an
-open-ended interview. If the answers are already clear, start working.
+Offer a sensible default instead of an open-ended interview. If the answers are
+already clear, start working.
 
 Infer likely failure modes from the work. When alignment would help, briefly offer
 your view of what to watch for and invite corrections or additions. Adapt this to
@@ -26,6 +25,20 @@ defaults and begin. If they want to **stay involved**, bring them consequential
 choices and return to them when the loop hits a snag or starts repeating itself.
 Otherwise, reserve interruptions for blockers you cannot resolve within the agreed
 scope. Follow any effort limits the user sets.
+
+## Choose review perspectives
+
+For each round, default to reviewing from the overall purpose down to implementation
+details. For software, useful lenses include product value and user needs, UX and
+end-to-end behavior, architecture, and code quality, correctness, and bugs. Adapt
+these lenses to the artifact and agreed scope; a narrow repair need not reopen the
+product premise.
+
+Choose the breakdown deliberately. Several dimensions can matter at once, and
+perspectives may overlap; they need not form a hierarchy or map to fixed job titles.
+Use separate subagents where independent judgment helps. This is a starting point,
+not a required roster: retain the relevant breadth each round and change the lenses
+when another breakdown better fits the work.
 
 ## Work, review, repeat
 
