@@ -2,7 +2,114 @@
 
 Personal agent skills for engineering, review, investigation, and verification.
 
-## Install
+## Repository structure
+
+Keep `skills/` as the shared source for all agents and environments. Individual
+skill installers such as `npx skills` use those folders directly. The portable
+`plugin.json`, Codex compatibility manifest in `.codex-plugin/`, and marketplace
+catalog in `.agents/plugins/` add distribution formats without moving or copying
+the skill sources.
+
+A future Claude Code plugin can add its own manifest and marketplace metadata
+pointing to the same `skills/` directory. Keep host-specific packaging outside
+the skills, preserve each skill's existing invocation metadata, and avoid forks
+or generated copies of skill instructions for each host. This change packages
+Codex distribution; it does not replace individual skill installation or add a
+Claude Code plugin installer.
+
+## Install as a Codex plugin
+
+This repository is also the plugin: `inprealpha-agent-skills`, in the `inprealpha`
+marketplace. The existing `skills/` directory is the single source of truth; plugin
+packaging does not change skill behavior, licenses, or invocation policies.
+
+In a current Codex CLI:
+
+```sh
+codex plugin marketplace add inprealpha/agent-skills --ref main
+codex plugin add inprealpha-agent-skills@inprealpha
+```
+
+Start a new chat after installation. In the desktop Plugins Directory, select the
+`inprealpha` source and install **Abir's Agent Skills** if you prefer the UI.
+To refresh it later, run `codex plugin marketplace upgrade inprealpha`
+and start a new chat.
+
+### Use in Codex Cloud
+
+Installing a local marketplace does not by itself provision cloud sessions.
+Choose the route your account supports:
+
+**Workspace plugin:** A workspace admin can open **Admin > Plugins > Add > Import
+marketplace**, enter `https://github.com/inprealpha/agent-skills`, leave Path empty,
+and set Branch to `main`. Import and make the plugin
+available to your role. Install/enable it, then start a new cloud task and check
+that its skills are available. The bundle contains no MCP servers or desktop hooks.
+
+**Cloud project setup:** If workspace import is unavailable, ask the environment
+setup agent to install the same skill folders into your target project's
+`.agents/skills/`. Add this repository to the environment, then run:
+
+```sh
+python3 /path/to/agent-skills/scripts/install_cloud_skills.py --project /path/to/your-project
+```
+
+Replace those paths with the actual cloud checkout paths. Alternatively, from the
+target project root, use this setup snippet (requires Python 3, Git, and GitHub
+network access):
+
+```sh
+skills_checkout="$(mktemp -d)"
+git clone --depth 1 --branch main https://github.com/inprealpha/agent-skills.git "$skills_checkout" &&
+python3 "$skills_checkout/scripts/install_cloud_skills.py" --project "$PWD"
+```
+
+Publish/republish the prepared environment and start a new task in that project.
+For reproducible environments, use a reviewed commit rather than following the
+moving branch. The helper copies every supporting file and license, accepts an
+identical repeat install, and refuses differing existing skills before copying
+anything. It does not overwrite or remove project skills; review conflicts when
+upgrading. This is repository skill discovery, not a cloud marketplace install.
+
+### Invoke and verify
+
+Select a skill with `@` where the UI supports it, or `$skill-name` in Codex CLI.
+For a first check, ask: “Use the architect skill to propose a design for this
+change; read its SKILL.md first and keep this request design-only.” Check that the
+agent actually reads the installed skill. Ten skills preserve explicit-only
+invocation through `agents/openai.yaml`; `craft`, `orchestrate-work`, `review-loop`,
+and `simplify-code` retain automatic discovery.
+
+The plugin supplies instructions, not capabilities: delegation, browser control,
+connected services, and project runtimes must be available in the cloud session.
+It does not include personal `config.toml`, credentials, conversation history, or
+global `AGENTS.md`. Avoid installing duplicate standalone and plugin copies in the
+same session. Cloud import and runtime behavior must be verified in your workspace.
+
+Official references: [plugin packaging](https://developers.openai.com/plugins/build/plugins),
+[workspace GitHub import](https://learn.chatgpt.com/docs/enterprise/plugin-management),
+[skill discovery](https://learn.chatgpt.com/docs/build-skills), and
+[cloud environments](https://learn.chatgpt.com/docs/environments/cloud-environments).
+
+### Validate and build an uploadable ZIP
+
+Run these commands from a repository checkout. Development dependency: Python
+3.10+ and `PyYAML==6.0.2`. The cloud setup helper uses
+only the Python standard library. CI validates packaging, tests the setup helper,
+and publishes a ZIP artifact on each push or pull request.
+
+```sh
+python3 -m pip install PyYAML==6.0.2
+python3 scripts/package_plugin.py --output dist/inprealpha-agent-skills.zip
+python3 -m unittest discover -s tests -v
+```
+
+The ZIP puts manifests and `skills/` at its root, includes the cloud setup helper,
+and excludes Git history, build tooling, CI files, and marketplace metadata.
+Existing per-skill license notices are retained; this
+package does not grant a new repository-wide license.
+
+## Install individual skills
 
 Use the [skills CLI](https://github.com/vercel-labs/skills):
 
