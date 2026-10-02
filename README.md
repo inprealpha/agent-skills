@@ -135,7 +135,7 @@ npx skills add inprealpha/agent-skills --skill simplify-code
 | --- | --- |
 | [architect](skills/architect/SKILL.md) | Design caller usage, interfaces, data types, and module ownership before implementing a change. |
 | [blast-radius](skills/blast-radius/SKILL.md) | Assess what a change could break beyond its diff and test the assumptions its safety depends on. |
-| [craft](skills/craft/SKILL.md) | Improve writing, design, products, or creative work that feels generic, low-effort, hard to parse, or like “AI slop,” grounding choices in the audience's needs. Not an AI detector or a general code-cleanup workflow. |
+| [craft](skills/craft/SKILL.md) | Simplify writing, documentation, code, architecture, interfaces, and creative work so people can quickly understand and use it. Use for “AI slop,” confusing or overcomplicated output, project reviews, and making the current result ready to share or ship. Not an AI detector. |
 | [create-verification-skill](skills/create-verification-skill/SKILL.md) | Create executable project verification instructions with a feature map and retained evidence. |
 | [hillclimb](skills/hillclimb/SKILL.md) | Improve one measurable outcome through isolated hypotheses, repeated measurements, and regression checks. |
 | [how](skills/how/SKILL.md) | Explain a subsystem through traced runtime flow, data ownership, and concrete code references. |
