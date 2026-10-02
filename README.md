@@ -11,14 +11,13 @@ packaging does not change skill behavior, licenses, or invocation policies.
 In a current Codex CLI:
 
 ```sh
-codex plugin marketplace add inprealpha/agent-skills --ref codex-plugin
+codex plugin marketplace add inprealpha/agent-skills --ref main
 codex plugin add inprealpha-agent-skills@inprealpha
 ```
 
 Start a new chat after installation. In the desktop Plugins Directory, select the
 `inprealpha` source and install **Abir's Agent Skills** if you prefer the UI.
-The `codex-plugin` branch contains this initial packaging; after it merges, use
-`--ref main`. To refresh it later, run `codex plugin marketplace upgrade inprealpha`
+To refresh it later, run `codex plugin marketplace upgrade inprealpha`
 and start a new chat.
 
 ### Use in Codex Cloud
@@ -28,7 +27,7 @@ Choose the route your account supports:
 
 **Workspace plugin:** A workspace admin can open **Admin > Plugins > Add > Import
 marketplace**, enter `https://github.com/inprealpha/agent-skills`, leave Path empty,
-and set Branch to `codex-plugin` (or `main` after merge). Import and make the plugin
+and set Branch to `main`. Import and make the plugin
 available to your role. Install/enable it, then start a new cloud task and check
 that its skills are available. The bundle contains no MCP servers or desktop hooks.
 
@@ -46,7 +45,7 @@ network access):
 
 ```sh
 skills_checkout="$(mktemp -d)"
-git clone --depth 1 --branch codex-plugin https://github.com/inprealpha/agent-skills.git "$skills_checkout" &&
+git clone --depth 1 --branch main https://github.com/inprealpha/agent-skills.git "$skills_checkout" &&
 python3 "$skills_checkout/scripts/install_cloud_skills.py" --project "$PWD"
 ```
 
