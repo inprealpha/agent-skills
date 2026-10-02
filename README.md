@@ -2,6 +2,21 @@
 
 Personal agent skills for engineering, review, investigation, and verification.
 
+## Repository structure
+
+Keep `skills/` as the shared source for all agents and environments. Individual
+skill installers such as `npx skills` use those folders directly. The portable
+`plugin.json`, Codex compatibility manifest in `.codex-plugin/`, and marketplace
+catalog in `.agents/plugins/` add distribution formats without moving or copying
+the skill sources.
+
+A future Claude Code plugin can add its own manifest and marketplace metadata
+pointing to the same `skills/` directory. Keep host-specific packaging outside
+the skills, preserve each skill's existing invocation metadata, and avoid forks
+or generated copies of skill instructions for each host. This change packages
+Codex distribution; it does not replace individual skill installation or add a
+Claude Code plugin installer.
+
 ## Install as a Codex plugin
 
 This repository is also the plugin: `inprealpha-agent-skills`, in the `inprealpha`
