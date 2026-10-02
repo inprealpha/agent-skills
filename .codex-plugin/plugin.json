@@ -1,0 +1,16 @@
+{
+  "name": "inprealpha-agent-skills",
+  "version": "1.0.0",
+  "description": "Personal workflows for engineering, review, investigation, verification, and craft.",
+  "author": { "name": "inprealpha", "url": "https://github.com/inprealpha" },
+  "repository": "https://github.com/inprealpha/agent-skills",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Abir's Agent Skills",
+    "shortDescription": "Engineering, review, verification, and craft workflows",
+    "longDescription": "Fourteen personal skills, with their original invocation policies and license notices. Tool-dependent workflows use the capabilities available in the current session.",
+    "developerName": "inprealpha",
+    "category": "Productivity",
+    "defaultPrompt": ["Use the architect skill to design this change.", "Use the interrogate skill to review this change."]
+  }
+}

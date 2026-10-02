@@ -1,0 +1,12 @@
+{
+  "name": "inprealpha",
+  "interface": { "displayName": "inprealpha" },
+  "plugins": [
+    {
+      "name": "inprealpha-agent-skills",
+      "source": { "source": "local", "path": "./" },
+      "policy": { "installation": "AVAILABLE", "authentication": "ON_INSTALL" },
+      "category": "Productivity"
+    }
+  ]
+}
