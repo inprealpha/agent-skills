@@ -141,7 +141,7 @@ npx skills add inprealpha/agent-skills --skill simplify-code
 | [how](skills/how/SKILL.md) | Explain a subsystem through traced runtime flow, data ownership, and concrete code references. |
 | [interrogate](skills/interrogate/SKILL.md) | Adversarially review a change and deliver a prioritized verdict grounded in reachable failures. |
 | [maintain-verification-skill](skills/maintain-verification-skill/SKILL.md) | Audit a project verification skill against current source and observed application behavior. |
-| [orchestrate-work](skills/orchestrate-work/SKILL.md) | Coordinate substantial work through decomposition, parallel execution, and fresh perspectives. Use for separable workstreams, research/design informing implementation, or requested team workflows. |
+| [orchestrate-work](skills/orchestrate-work/SKILL.md) | Coordinate substantial work with ownership suited to the task, parallel execution, and fresh perspectives. Use for broad ambiguous goals, separable workstreams, or requested team workflows. |
 | [reflect](skills/reflect/SKILL.md) | Extract durable lessons from a work session and route them to focused skill or tooling improvements. |
 | [review-loop](skills/review-loop/SKILL.md) | Finish work through repeated fresh-context reviews and fixes. Use when the user wants an autonomous review loop after a brief alignment on the outcome and review perspectives. |
 | [simplify-code](skills/simplify-code/SKILL.md) | Simplify code when asked to review over-engineering or apply cleanup, including redundant tests and avoidable dependencies. Preserve behavior; keep unrelated feature work and general correctness reviews outside this skill's scope. |

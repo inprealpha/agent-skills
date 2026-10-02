@@ -20,7 +20,7 @@ For writing or other artifacts, the equivalent may be competing outlines, sample
 
 Inspect the actual proposals at a useful size, with representative content. Judge each against the user's tasks and constraints: what draws attention, what is hard to parse, what action is obvious, and what evidence is missing. A rationale cannot substitute for seeing a visual design. If viewing is unavailable, state that gap and use the best available representation without claiming visual validation.
 
-Have independent reviewers examine distinct useful axes, such as product fit, visual communication, and engineering feasibility. Keep technical feasibility from becoming an automatic veto on a valuable design; identify the concrete constraint and viable alternatives. The coordinator chooses a coherent direction using evidence and explains important tradeoffs. Do not average incompatible proposals or tally reviewer votes.
+Have independent reviewers examine distinct useful axes, such as product fit, visual communication, and engineering feasibility. Keep technical feasibility from becoming an automatic veto on a valuable design; identify the concrete constraint and viable alternatives. The assigned outcome owners choose a coherent direction within their mandate, taking shared decisions and scope changes to the coordinator; without delegated ownership, the coordinator makes that choice. Explain important tradeoffs. Do not average incompatible proposals or tally reviewer votes.
 
 Record only the decisions downstream work needs: content priority, intended interactions, visual direction, and accepted compromises. Pass those along with the chosen artifacts to implementation workers so the design is not reduced to a vague adjective.
 
